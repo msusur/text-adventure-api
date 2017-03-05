@@ -8,6 +8,17 @@ const FacebookHook = require('./FacebookWebHook');
 app.use(bodyParser.json());
 
 const hook = new FacebookHook();
+
+const firstEntity = (entities, entity) => {
+    const val = entities && entities[entity] &&
+        Array.isArray(entities[entity]) &&
+        entities[entity].length > 0 &&
+        entities[entity][0];;
+    if (!val) {
+        return null;
+    }
+    return typeof val === 'object' ? val : val;
+};
 const Actions = {
     send({ sessionId }, { text }) {
         const recipientId = hook.sessions[sessionId].fbid;
@@ -29,6 +40,12 @@ const Actions = {
     },
     emotionUpdate({ sessionId, context, entities }) {
         return new Promise(function(resolve, reject) {
+            const emotion = firstEntity(entities, 'emotion');
+            if (!emotion) {
+                context.emotionMissing = true;
+                return resolve(context);
+            }
+
             return resolve(context);
         });
     }

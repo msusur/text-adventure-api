@@ -87,6 +87,7 @@ class FacebookWebHook {
         if (!sessionId) {
             // Create a new session.
             sessionId = new Date().toISOString();
+            this.fbMessage(fbid, "Selam, oyuna baslamak icin 'oyuna basla' yazabilirsin.");
             this.sessions[sessionId] = { fbid: fbid, context: {} };
         }
         return sessionId;
