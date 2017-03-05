@@ -31,6 +31,7 @@ const actions = {
 };
 
 let wit = new WitClient(actions);
+let hook = new FacebookHook();
 
 router.get('/api/alive', (req, res) => {
     res.send({ res: true });
