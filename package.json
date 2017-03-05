@@ -4,7 +4,7 @@
     "description": "A text based adventure game api",
     "main": "index.js",
     "scripts": {
-        "start": "node index.js"
+        "start": "node src/index.js"
     },
     "repository": {
         "type": "git",
@@ -26,7 +26,6 @@
         "node-wit": "^4.2.0",
         "request": "^2.79.0",
         "request-promise": "^4.1.1",
-        "requestify": "^0.2.5",
         "rxjs": "^5.2.0",
         "stackjs": "^0.1.0"
     },

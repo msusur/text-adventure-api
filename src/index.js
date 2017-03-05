@@ -2,7 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const router = express.Router();
-const requestify = require('requestify');
 
 const WitClient = require('./WitClient');
 const FacebookHook = require('./FacebookWebHook');
@@ -45,20 +44,26 @@ router.get('/api/bot/message', (req, res) => {
 
 router.post('/api/bot/message', (req, res) => {
     hook.parseMessage(req, res, wit, (sender, text, sessionId, sessions) => {
-            console.log(`Asking WIT`);
-            wit.runActions(
-                sessionId,
-                text,
-                sessions[sessionId].context
-            ).then((context) => {
-                context.sessionId = sessionId;
-                context.senderId = sender;
-                console.log('Waiting for next user messages');
-                sessions[sessionId].context = context;
-            }).catch((err) => {
-                console.error('Oops! Got an error from Wit: ', err.stack || err);
-            });
-        }
+        console.log(`Asking WIT`);
+        wit.runActions(
+            sessionId,
+            text,
+            sessions[sessionId].context
+        ).then((context) => {
+            context.sessionId = sessionId;
+            context.senderId = sender;
+            console.log('Waiting for next user messages');
+            sessions[sessionId].context = context;
+        }).catch((err) => {
+            console.error('Oops! Got an error from Wit: ', err.stack || err);
+        });
         res.sendStatus(200);
     });
+});
+
+
+app.use(router);
+
+app.listen(process.env.PORT || 8080, () => {
+    console.log('working...');
 });
