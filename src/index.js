@@ -27,8 +27,10 @@ const Actions = {
             return Promise.resolve();
         }
     },
-    emotionUpdate(context) {
-        return Promise.resolve();
+    emotionUpdate({ sessionId, context, entities }) {
+        return new Promise(function(resolve, reject) {
+            return resolve(context);
+        });
     }
 };
 const wit = new WitClient(Actions);

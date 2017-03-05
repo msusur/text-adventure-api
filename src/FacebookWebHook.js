@@ -39,8 +39,9 @@ class FacebookWebHook {
         this.sessions = {};
     }
 
-    parseMessage(req, res, wit, confidenceChecker) {
+    parseMessage(req, res, wit, execute) {
         const data = req.body;
+
         console.log(`incoming message : ${JSON.stringify(data)}`);
         if (data.object === 'page') {
             data.entry.forEach(entry => {
@@ -50,12 +51,13 @@ class FacebookWebHook {
                         const sessionId = this.findOrCreateSession(sender);
 
                         const { text, attachments } = event.message;
+                        this.typing(sessionId);
 
                         if (attachments) {
                             this.fbMessage(sender, 'Sorry I can only process text messages for now.')
                                 .catch(console.error);
                         } else if (text) {
-                            confidenceChecker(sender, text, sessionId, this.sessions);
+                            execute(sender, text, sessionId, this.sessions);
                         }
                     } else {
                         console.log('received event', JSON.stringify(event));
