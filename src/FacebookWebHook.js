@@ -10,7 +10,6 @@ const prepareMessageBody = (id, text) => {
     };
     if (text) {
         body.message = { text };
-        body.sender_action = "typing_off";
     } else {
         body.sender_action = "typing_on";
     }
