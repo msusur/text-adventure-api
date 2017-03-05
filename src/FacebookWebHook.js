@@ -4,6 +4,36 @@ const request = require('request');
 const VERIFY_TOKEN = 'QSB2ZXJ5IGF3ZXNvbWUgdG9rZW4gZm9yIGEgc3VwZXIgYXdlc29tZSB0ZWFtISE=';
 const PAGE_ACCESS_TOKEN = 'EAAHBLu628ZB8BABEfBa14EnGeNv4Jksae8DSNEjsmFJ1sSYlDTP6v2ExwQWpTBsbbgq8qfvRfIs8GWEYsKko9fMnZAhQZBwa2ladUQRWKNPd2BOsiuDFdDApTLZApEB7c6fZBLCjeYir8tvbtwD8dOcpCm0yf6aPfzdZCNHpQaKQZDZD';
 
+const prepareMessageBody = (id, text) => {
+    let body = {
+        recipient: { id }
+    };
+    if (text) {
+        body.message = { text };
+        body.sender_action: "typing_off";
+    } else {
+        body.sender_action: "typing_on";
+    }
+
+    return JSON.stringify(body);
+};
+
+const fetchMessage = (body) => {
+    const qs = 'access_token=' + encodeURIComponent(PAGE_ACCESS_TOKEN);
+    return fetch('https://graph.facebook.com/me/messages?' + qs, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body,
+        })
+        .then(rsp => rsp.json())
+        .then(json => {
+            if (json.error && json.error.message) {
+                throw new Error(json.error.message);
+            }
+            return json;
+        });
+};
+
 class FacebookWebHook {
     constructor() {
         this.sessions = {};
@@ -61,24 +91,14 @@ class FacebookWebHook {
         return sessionId;
     }
 
+    typing(id) {
+        const body = prepareMessageBody(id);
+        return fetchMessage(body);
+    }
+
     fbMessage(id, text) {
-        const body = JSON.stringify({
-            recipient: { id },
-            message: { text },
-        });
-        const qs = 'access_token=' + encodeURIComponent(PAGE_ACCESS_TOKEN);
-        return fetch('https://graph.facebook.com/me/messages?' + qs, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body,
-            })
-            .then(rsp => rsp.json())
-            .then(json => {
-                if (json.error && json.error.message) {
-                    throw new Error(json.error.message);
-                }
-                return json;
-            });
+        const body = prepareMessageBody(id, text);
+        return fetchMessage(body);
     }
 }
 
