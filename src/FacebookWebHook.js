@@ -38,7 +38,7 @@ class FacebookWebHook {
         this.sessions = {};
     }
 
-    parseMessage(req, res, wit, execute) {
+    parseMessage({ req, res, execute }) {
         const data = req.body;
 
         console.log(`incoming message : ${JSON.stringify(data)}`);

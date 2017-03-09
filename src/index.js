@@ -5,9 +5,11 @@ const router = express.Router();
 
 const WitClient = require('./WitClient');
 const FacebookHook = require('./FacebookWebHook');
+const Parser = require('./engine/parser');
 app.use(bodyParser.json());
 
 const hook = new FacebookHook();
+const parser = new Parser();
 
 const firstEntity = (entities, entity) => {
     const val = entities && entities[entity] &&
@@ -62,22 +64,35 @@ router.get('/api/bot/message', (req, res) => {
     res.end();
 });
 
+router.post('/api/console/input', (req, res) => {
+    const message = req.body.message;
+    parser.parseCommand(message).then((command) => {
+        res.send({ res: command });
+        res.end();
+    });
+});
+
 router.post('/api/bot/message', (req, res) => {
-    hook.parseMessage(req, res, wit, (sender, text, sessionId, sessions) => {
-        console.log(`Asking WIT`);
-        wit.runActions(
-            sessionId,
-            text,
-            sessions[sessionId].context
-        ).then((context) => {
-            context.sessionId = sessionId;
-            context.senderId = sender;
-            console.log('Waiting for next user messages');
-            sessions[sessionId].context = context;
-        }).catch((err) => {
-            console.error('Oops! Got an error from Wit: ', err.stack || err);
-        });
-        res.sendStatus(200);
+    hook.parseMessage({
+        req: req,
+        res: res,
+        execute: (sender, text, sessionId, sessions) => {
+
+            // console.log(`Asking WIT`);
+            // wit.runActions(
+            //     sessionId,
+            //     text,
+            //     sessions[sessionId].context
+            // ).then((context) => {
+            //     context.sessionId = sessionId;
+            //     context.senderId = sender;
+            //     console.log('Waiting for next user messages');
+            //     sessions[sessionId].context = context;
+            // }).catch((err) => {
+            //     console.error('Oops! Got an error from Wit: ', err.stack || err);
+            // });
+            // res.sendStatus(200);
+        }
     });
 });
 

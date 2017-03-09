@@ -1,9 +1,9 @@
 const { Wit, log, interactive } = require('node-wit');
-const accessToken = 'M5IEIAQFV4KPEYMI7DU33KAZRY5HKWTU';
+const accessToken = 'HXOBKUGICZIB5TIJWXZDU52VSK5BO76N';
 
 class WitClient {
     constructor(actions) {
-        this.client = new Wit({ accessToken, actions });
+        this.client = new Wit({ accessToken });
     }
 
     sendMessage(message) {
