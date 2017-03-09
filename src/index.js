@@ -77,8 +77,12 @@ router.post('/api/bot/message', (req, res) => {
         req: req,
         res: res,
         execute: (sender, text, sessionId, sessions) => {
-
-            // console.log(`Asking WIT`);
+            console.log(`Asking WIT: \r\n"${text}".`);
+            parser.parseCommand(text).then((command) => {
+                hook.fbMessage(sender, JSON.stringify(command))
+                    .catch(console.error);
+                res.sendStatus(200);
+            });
             // wit.runActions(
             //     sessionId,
             //     text,
@@ -91,7 +95,6 @@ router.post('/api/bot/message', (req, res) => {
             // }).catch((err) => {
             //     console.error('Oops! Got an error from Wit: ', err.stack || err);
             // });
-            // res.sendStatus(200);
         }
     });
 });
