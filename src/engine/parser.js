@@ -18,7 +18,9 @@ class Parser {
         };
         const getIntent = (entities) => {
             let intent = entities.intent;
-            return getConfidentItem(intent);
+            if (intent) {
+                return getConfidentItem(intent);
+            }
         };
 
         const getEntities = (entities) => {
