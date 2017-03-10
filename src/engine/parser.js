@@ -16,6 +16,7 @@ class Parser {
             });
             return currentItem;
         };
+
         const getIntent = (entities) => {
             let intent = entities.intent;
             if (intent) {
@@ -42,6 +43,10 @@ class Parser {
         };
 
         return new Promise((resolve, reject) => {
+            let gameCommand = this.checkGameCommand(input);
+            if (gameCommand) {
+                return resolve(gameCommand);
+            }
             this.client.sendMessage(input).then((result) => {
                 let intent = getIntent(result.entities);
                 if (!intent) {
@@ -56,6 +61,19 @@ class Parser {
                 resolve(command);
             });
         });
+    }
+
+    checkGameCommand(input) {
+        if (input.toLowerCase() === '\\start') {
+            return {
+                action: 'StartGame'
+            };
+        }
+        if (input.toLowerCase() === '\\reset') {
+            return {
+                action: 'ResetGame'
+            };
+        }
     }
 }
 

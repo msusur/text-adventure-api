@@ -1,4 +1,16 @@
 (function(angular) {
+    var uuid = function() { // Public Domain/MIT
+        var d = new Date().getTime();
+        if (typeof performance !== 'undefined' && typeof performance.now === 'function') {
+            d += performance.now(); //use high-precision timer if available
+        }
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            var r = (d + Math.random() * 16) % 16 | 0;
+            d = Math.floor(d / 16);
+            return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+        });
+    }();
+
     var app = angular.module('chatApp', [])
         .directive('schrollBottom', function() {
             return {
@@ -16,22 +28,23 @@
         })
         .controller('chatController', function($scope, $http, $timeout) {
             $scope.messages = [{
-                body: 'Oyuna hoş geldiniz! Birinci adım için \\basla yazin.',
-                date: '1st June',
-                from: 'me',
+                body: 'Oyuna hoş geldiniz! Birinci adım için "\\start" yazip enter tusuna basin..',
+                date: 'now',
+                from: 'Bot',
                 isBot: true
             }];
             $scope.send = function() {
-                $http.post('/api/console/input', { message: $scope.inputMessage }).success(function(result) {
+                var message = $scope.inputMessage;
+                $scope.inputMessage = '';
+                $http.post('/api/console/input', { message: message, id: uuid }).success(function(result) {
                     $scope.messages.push({
-                        body: $scope.inputMessage,
+                        body: message,
                         date: 'now',
                         from: 'me',
                         isBot: false
                     });
-                    $scope.inputMessage = '';
                     $scope.messages.push({
-                        body: result,
+                        body: result.result.text,
                         date: 'now',
                         from: 'teller',
                         isBot: true

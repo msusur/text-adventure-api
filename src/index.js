@@ -6,10 +6,15 @@ const router = express.Router();
 const WitClient = require('./WitClient');
 const FacebookHook = require('./FacebookWebHook');
 const Parser = require('./engine/parser');
+const GameEngine = require('./engine/gameEngine');
+const BasicLevel = require('./engine/levels/basic');
 app.use(bodyParser.json());
 
 const hook = new FacebookHook();
 const parser = new Parser();
+var sessions = {};
+const game = new GameEngine(sessions, BasicLevel);
+
 
 const wit = new WitClient();
 
@@ -27,8 +32,13 @@ router.get('/api/bot/message', (req, res) => {
 
 router.post('/api/console/input', (req, res) => {
     const message = req.body.message;
+    const id = req.body.id;
     parser.parseCommand(message).then((command) => {
-        res.send({ res: command });
+        let result = game.processCommand({
+            command,
+            sessionId: id
+        });
+        res.send({ result });
         res.end();
     });
 });
