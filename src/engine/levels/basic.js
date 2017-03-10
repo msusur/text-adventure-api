@@ -41,6 +41,7 @@ module.exports = {
                             }
                             return "Kapı kilitli.";
                         },
+                        look: "Eski püskü bir kapı. Ama epey sağlam duruyor. Üzerinde bazı lekeler var."
                     },
                     "anahtar": {
                         take: "Anahtarı aldin.",
