@@ -1,24 +1,30 @@
 const GameResult = require('./gameResult');
 const InventoryItem = require('./inventoryItem');
 
+const getMatchingInteraction = (entityValue, game, context) => {
+    const location = game.story.map[context.currentLocation];
+    let interactionItem;
+    Object.keys(location.interactions).forEach(interaction => {
+        if (entityValue && entityValue.includes(interaction)) {
+            interactionItem = interaction;
+        }
+    });
+    return interactionItem;
+};
+
 module.exports = {
     DropItem: function(entity, context, game) {
-        debugger;
+        return new GameResult('Not implemented yet.');
     },
     Move: function(entity, context, game) {
-        debugger;
+        return new GameResult('Not implemented yet.');
     },
     Open: function(entity, context, game) {
-        debugger;
+        return new GameResult('Not implemented yet.');
     },
     TakeItem: function(entity, context, game) {
         const location = game.story.map[context.currentLocation];
-        let interactionItem;
-        Object.keys(location.interactions).forEach(interaction => {
-            if (entity.what_to_take && entity.what_to_take.includes(interaction)) {
-                interactionItem = interaction;
-            }
-        });
+        let interactionItem = getMatchingInteraction(entity.what_to_take, game, context);
         // If there is no interaction item.
         if (!interactionItem) {
             return new GameResult(`Etrafta oyle bir sey yok!`);
@@ -42,12 +48,8 @@ module.exports = {
     },
     Use: function(entity, context, game) {
         const location = game.story.map[context.currentLocation];
-        let interactionItem;
-        Object.keys(location.interactions).forEach(interaction => {
-            if (entity.item && entity.item.includes(interaction)) {
-                interactionItem = interaction;
-            }
-        });
+        let interactionItem = getMatchingInteraction(entity.item, game, context);
+
         // If there is no interaction item.
         if (!interactionItem) {
             return new GameResult(`Etrafta kullanilacak oyle bir sey yok!`);
@@ -67,6 +69,26 @@ module.exports = {
         return new GameResult(useOperation);
     },
     Look: function(entity, context, game) {
-        debugger;
+        const location = game.story.map[context.currentLocation];
+        let interactionItem = getMatchingInteraction(entity.direction, game, context);
+        if(!interactionItem){
+            return new GameResult('Bakabileceğin bir şey yok.');
+        }
+
+        const currentInteraction = location.interactions[interactionItem];
+        const lookOperation = currentInteraction.look;
+        // if interaction doesn't have the "use" action.
+        if (!lookOperation) {
+            return new GameResult(`"${interactionItem}" hakkında başka bir bilgi yok.`);
+        }
+
+        // if interaction is a function.
+        if(typeof lookOperation === "function") {
+            const text = lookOperation(context);
+            return new GameResult(text);
+        }
+
+        // None of the above means this is a text.
+        return new GameResult(lookOperation);
     }
 };

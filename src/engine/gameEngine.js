@@ -5,7 +5,9 @@ const executeCommand = (command, session, gameLevel) => {
     const action = command.action,
         entities = command.entities,
         context = session.context;
-
+    if(!action || action === "Undefined") {
+        return new GameResult('Ne dediğini anlamadım.');
+    }
     return Commands[action](entities, context, gameLevel);
 };
 
