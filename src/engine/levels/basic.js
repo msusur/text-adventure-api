@@ -12,6 +12,12 @@ module.exports = {
         currentLocation: "TheRoom",
         inventory: []
     },
+    codes: {
+        "laptopCode": `
+        
+        
+        `
+    },
     story: {
         intro: "Hos geldin!",
         player: {
@@ -70,7 +76,8 @@ module.exports = {
                         take: "Deney tüpünü aldın"
                     },
                     "bilgisayar": {
-                        look: "Eski bir bilgisayar, ekranı çatlamış.",
+                        look: "Eski bir bilgisayar, ekranı çatlamış ama hala çalışıyor.",
+                        use: "Yazilimci Notu: Burada bir kod penceresi açılacak. Daha üzerinde çalışıyorum..."
                     }
                 }
             }
