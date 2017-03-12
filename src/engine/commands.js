@@ -1,11 +1,12 @@
 const GameResult = require('./gameResult');
+const LeaveRoomResult = require('./leaveRoomResult');
 const InventoryItem = require('./inventoryItem');
 
 const getMatchingInteraction = (entityValue, game, context) => {
     const location = game.story.map[context.currentLocation];
     let interactionItem;
     Object.keys(location.interactions).forEach(interaction => {
-        if (entityValue && entityValue.includes(interaction)) {
+        if (entityValue && entityValue.toLowerCase().includes(interaction)) {
             interactionItem = interaction;
         }
     });
@@ -20,6 +21,7 @@ module.exports = {
         return new GameResult('Not implemented yet.');
     },
     Open: function(entity, context, game) {
+        // maybe we don't need this?
         return new GameResult('Not implemented yet.');
     },
     TakeItem: function(entity, context, game) {
@@ -62,8 +64,11 @@ module.exports = {
         }
         // if interaction is a function.
         if (typeof useOperation === "function") {
-            const text = useOperation(context);
-            return new GameResult(text);
+            const operationResult = useOperation(context);
+            if (operationResult.room) {
+                return new LeaveRoomResult(operationResult.room, operationResult.text);
+            }
+            return new GameResult(operationResult);
         }
         // None of the above means this is a text.
         return new GameResult(useOperation);
@@ -71,7 +76,7 @@ module.exports = {
     Look: function(entity, context, game) {
         const location = game.story.map[context.currentLocation];
         let interactionItem = getMatchingInteraction(entity.direction, game, context);
-        if(!interactionItem){
+        if (!interactionItem) {
             return new GameResult('Bakabileceğin bir şey yok.');
         }
 
@@ -83,7 +88,7 @@ module.exports = {
         }
 
         // if interaction is a function.
-        if(typeof lookOperation === "function") {
+        if (typeof lookOperation === "function") {
             const text = lookOperation(context);
             return new GameResult(text);
         }

@@ -25,9 +25,9 @@ module.exports = {
                         look: "Yatak üzerinde çarşaf bile yok ve çok pis."
                     },
                     "masa": {
-                        look: function(state){
+                        look: function(state) {
                             let key = findItemInInventory(state.inventory, "anahtar");
-                            if(key) {
+                            if (key) {
                                 return "Masa boş duruyor.";
                             }
                             return "Masanın üzerinde bir anahtar var.";
@@ -37,7 +37,10 @@ module.exports = {
                         use: function(state) {
                             let item = findItemInInventory(state.inventory, "anahtar");
                             if (item) {
-                                return "Kapı açıldı.";
+                                return {
+                                    text: "Kapı açıldı ve yeni bir odaya girdin.",
+                                    room: "TheLab"
+                                };
                             }
                             return "Kapı kilitli.";
                         },
@@ -50,6 +53,9 @@ module.exports = {
                         drop: "Yere biraktin."
                     }
                 }
+            },
+            "TheLab": {
+                initial: "Labaratuvar"
             }
         }
     }

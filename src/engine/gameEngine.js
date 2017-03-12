@@ -5,7 +5,7 @@ const executeCommand = (command, session, gameLevel) => {
     const action = command.action,
         entities = command.entities,
         context = session.context;
-    if(!action || action === "Undefined") {
+    if (!action || action === "Undefined") {
         return new GameResult('Ne dediğini anlamadım.');
     }
     return Commands[action](entities, context, gameLevel);
@@ -44,7 +44,21 @@ class GameEngine {
             return result;
 
         }
-        return executeCommand(command, session, this.currentLevel);
+        const executionResponse = executeCommand(command, session, this.currentLevel);
+        if (executionResponse.room) {
+            return this.changeRoom(executionResponse, session.context, this.currentLevel);
+        }
+        return executionResponse;
+    }
+
+    changeRoom(command, state, level) {
+        const nextRoom = level.story.map[command.room];
+        if (nextRoom) {
+            state.currentLocation = command.room;
+
+            return new GameResult(command.text + '\r\n' + nextRoom.initial);
+        }
+        return new GameResult("Yeni odaya gecilemiyor. Bir hata olustu.");
     }
 }
 

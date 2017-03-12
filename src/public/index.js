@@ -26,13 +26,26 @@
                 }
             }
         })
-        .controller('chatController', function($scope, $http, $timeout) {
-            $scope.messages = [{
-                body: 'Oyuna hoş geldiniz! Birinci adım için "\\start" yazip enter tusuna basin..',
-                date: 'now',
-                from: 'Bot',
-                isBot: true
-            }];
+        .controller('chatController', ['$scope', '$http', '$timeout', function($scope, $http, $timeout) {
+            $scope.dialogDisplay = true;
+
+            $scope.selectLanguage = function(language) {
+                $scope.language = language;
+                var message = 'Oyuna hoş geldiniz! Birinci adım için "\\start" yazip enter tusuna basin..';
+                if (language === 'en') {
+                    message = 'Welcome to the game, write "\\start" and press enter to start the game.';
+                }
+                $scope.messages = [{
+                    body: message,
+                    date: 'now',
+                    from: 'Bot',
+                    isBot: true
+                }];
+                $scope.dialogDisplay = false;
+            };
+
+            $scope.selectLanguage('tr');
+
             $scope.send = function() {
                 var message = $scope.inputMessage;
                 $scope.inputMessage = '';
@@ -56,5 +69,5 @@
                     });
                 });
             };
-        });
+        }]);
 })(angular);

@@ -1,4 +1,58 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700);
+
+/*Mask*/
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+.mask-background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 9999;
+    opacity: 0.7;
+}
+
+.mask-content {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    opacity: 1;
+}
+
+.big {
+    padding: 0 40px;
+    padding-top: 10px;
+    height: 45px;
+    text-transform: uppercase;
+    font: bold 20px/22px Arial, sans-serif;
+}
+
+.language-button {
+    height: 200px;
+    width: 200px;
+    display: inline-block;
+    position: relative;
+    margin: 10px;
+    padding: 80px 20px 0 20px;
+    text-align: center;
+    text-decoration: none;
+    background-color: lightblue;
+    color: black;
+    font: bold x-large Arial, sans-serif;
+    border-radius: 30px;
+    transition: all 0.15s ease;
+    cursor: pointer;
+}
+
 *,
 *:before,
 *:after {
