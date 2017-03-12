@@ -55,7 +55,24 @@ module.exports = {
                 }
             },
             "TheLab": {
-                initial: "Labaratuvar"
+                initial: "Labaratuvara girdiğinde ışıkların yanıp söndüğünü görüyorsun. Her yerde kırılmış deney tüpleri var. " +
+                    "Solunda bir masa ve sağ tarafında eski bir bilgisayar var ve odanın ilerisinde bir kapı var.",
+                interactions: {
+                    "kapı": {
+                        look: "Kapı kapalı duruyor. Sanki sadece elektronik bir sekilde acilacak gibi.",
+                        use: "Nasıl kullanacağını bilmiyorsun. Uzerinde hic bir sey yok."
+                    },
+                    "masa": {
+                        look: "Masanın üzerinde bir sürü deney tüpü ve yeşil bir sıvı var. Çok tekin görünmüyor"
+                    },
+                    "tüp": {
+                        look: "Çatlak ama kullanılabilir duruyor",
+                        take: "Deney tüpünü aldın"
+                    },
+                    "bilgisayar": {
+                        look: "Eski bir bilgisayar, ekranı çatlamış.",
+                    }
+                }
             }
         }
     }
