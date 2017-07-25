@@ -1,11 +1,4 @@
-const findItemInInventory = (inventory, item) => {
-    for (let index = 0; index < inventory.length; index += 1) {
-        if (inventory[index].name === item) {
-            return inventory[index];
-        }
-    }
-    return;
-};
+const helpers = require('./helper.js');
 
 module.exports = {
     state: {
@@ -31,7 +24,7 @@ module.exports = {
                     },
                     "masa": {
                         look: function(state) {
-                            let key = findItemInInventory(state.inventory, "anahtar");
+                            let key = helpers.findItemInInventory(state.inventory, "anahtar");
                             if (key) {
                                 return "Masa boş duruyor.";
                             }
@@ -40,7 +33,7 @@ module.exports = {
                     },
                     "kapı": {
                         use: function(state) {
-                            let item = findItemInInventory(state.inventory, "anahtar");
+                            let item = helpers.findItemInInventory(state.inventory, "anahtar");
                             if (item) {
                                 return {
                                     text: "Kapı açıldı ve yeni bir odaya girdin.",
