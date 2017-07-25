@@ -14,8 +14,7 @@ module.exports = {
     },
     codes: {
         "laptopCode": `
-        
-        
+            Code var burada.
         `
     },
     story: {

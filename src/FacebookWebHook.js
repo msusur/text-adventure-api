@@ -1,9 +1,6 @@
 const fetch = require('node-fetch');
 const request = require('request');
 
-const VERIFY_TOKEN = 'QSB2ZXJ5IGF3ZXNvbWUgdG9rZW4gZm9yIGEgc3VwZXIgYXdlc29tZSB0ZWFtISE=';
-const PAGE_ACCESS_TOKEN = 'EAAHBLu628ZB8BABEfBa14EnGeNv4Jksae8DSNEjsmFJ1sSYlDTP6v2ExwQWpTBsbbgq8qfvRfIs8GWEYsKko9fMnZAhQZBwa2ladUQRWKNPd2BOsiuDFdDApTLZApEB7c6fZBLCjeYir8tvbtwD8dOcpCm0yf6aPfzdZCNHpQaKQZDZD';
-
 const prepareMessageBody = (id, text) => {
     let body = {
         recipient: { id }
@@ -17,8 +14,8 @@ const prepareMessageBody = (id, text) => {
     return JSON.stringify(body);
 };
 
-const fetchMessage = (body) => {
-    const qs = 'access_token=' + encodeURIComponent(PAGE_ACCESS_TOKEN);
+const fetchMessage = (body, pageAccessToken) => {
+    const qs = 'access_token=' + encodeURIComponent(pageAccessToken);
     return fetch('https://graph.facebook.com/me/messages?' + qs, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -34,8 +31,10 @@ const fetchMessage = (body) => {
 };
 
 class FacebookWebHook {
-    constructor() {
+    constructor(verifyToken, pageAccessToken) {
         this.sessions = {};
+        this.verifyToken = verifyToken;
+        this.pageAccessToken = pageAccessToken;
     }
 
     parseMessage({ req, res, execute }) {
@@ -68,7 +67,7 @@ class FacebookWebHook {
 
     setupHooks(req, res) {
         if (req.query['hub.mode'] === 'subscribe' &&
-            req.query['hub.verify_token'] === VERIFY_TOKEN) {
+            req.query['hub.verify_token'] === this.verifyToken) {
             res.send(req.query['hub.challenge']);
         } else {
             res.sendStatus(400);
@@ -95,12 +94,12 @@ class FacebookWebHook {
 
     typing(id) {
         const body = prepareMessageBody(id);
-        return fetchMessage(body);
+        return fetchMessage(body, this.pageAccessToken);
     }
 
     fbMessage(id, text) {
         const body = prepareMessageBody(id, text);
-        return fetchMessage(body);
+        return fetchMessage(body, this.pageAccessToken);
     }
 }
 

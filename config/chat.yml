@@ -1,0 +1,8 @@
+default:
+  facebook:
+  # facebook chatbot attributes
+    verify_token: QSB2ZXJ5IGF3ZXNvbWUgdG9rZW4gZm9yIGEgc3VwZXIgYXdlc29tZSB0ZWFtISE=
+    page_access_token: EAAHBLu628ZB8BABEfBa14EnGeNv4Jksae8DSNEjsmFJ1sSYlDTP6v2ExwQWpTBsbbgq8qfvRfIs8GWEYsKko9fMnZAhQZBwa2ladUQRWKNPd2BOsiuDFdDApTLZApEB7c6fZBLCjeYir8tvbtwD8dOcpCm0yf6aPfzdZCNHpQaKQZDZD
+  # your wit AI access token. 
+  wit:
+    access_token: HXOBKUGICZIB5TIJWXZDU52VSK5BO76N

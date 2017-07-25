@@ -1,4 +1,5 @@
 const express = require('express');
+const config = require('konfig')();
 const bodyParser = require('body-parser');
 const app = express();
 const router = express.Router();
@@ -10,13 +11,13 @@ const GameEngine = require('./engine/gameEngine');
 const BasicLevel = require('./engine/levels/basic');
 app.use(bodyParser.json());
 
-const hook = new FacebookHook();
-const parser = new Parser();
+const hook = new FacebookHook(config.chat.facebook.verify_token, config.chat.facebook.page_access_token);
+const parser = new Parser(config.chat.wit.access_token);
 var sessions = {};
 const game = new GameEngine(sessions, BasicLevel);
 
 
-const wit = new WitClient();
+const wit = new WitClient(config.chat.wit.access_token);
 
 app.use(express.static(__dirname + '/public'));
 

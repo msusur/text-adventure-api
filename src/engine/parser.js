@@ -1,8 +1,8 @@
 const WitClient = require('../WitClient');
 
 class Parser {
-    constructor() {
-        this.client = new WitClient({});
+    constructor(accessToken) {
+        this.client = new WitClient(accessToken);
     }
 
     parseCommand(input) {
