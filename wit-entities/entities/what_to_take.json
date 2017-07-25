@@ -1,0 +1,58 @@
+{
+                                                                                                                        "data" : {
+                                                                                                                          "lookups" : [
+                                                                                                                            "free-text",
+                                                                                                                            "keywords"
+                                                                                                                          ],
+                                                                                                                          "name" : "what_to_take",
+                                                                                                                          "lang" : "tr",
+                                                                                                                          "exotic" : false,
+                                                                                                                          "id" : "what_to_take",
+                                                                                                                          "values" : [
+                                                                                                                            {
+                                                                                                                              "value" : "Yerden",
+                                                                                                                              "expressions" : [
+                                                                                                                                "Yerden"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "anahtar",
+                                                                                                                              "expressions" : [
+                                                                                                                                "anahtar"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "elmayı",
+                                                                                                                              "expressions" : [
+                                                                                                                                "elmayı"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "kalemi",
+                                                                                                                              "expressions" : [
+                                                                                                                                "kalemi"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "kitabı",
+                                                                                                                              "expressions" : [
+                                                                                                                                "kitabı"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "silah",
+                                                                                                                              "expressions" : [
+                                                                                                                                "silah"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "tüp",
+                                                                                                                              "expressions" : [
+                                                                                                                                "tüp"
+                                                                                                                              ]
+                                                                                                                            }
+                                                                                                                          ],
+                                                                                                                          "doc" : "User-defined entity",
+                                                                                                                          "builtin" : false
+                                                                                                                        }
+                                                                                                                      }

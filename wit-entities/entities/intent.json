@@ -1,0 +1,35 @@
+{
+    "data": {
+        "lookups": [
+            "trait"
+        ],
+        "name": "intent",
+        "lang": "tr",
+        "exotic": false,
+        "id": "intent",
+        "values": [{
+                "value": "DropItem"
+            },
+            {
+                "value": "Greeting"
+            },
+            {
+                "value": "Look"
+            },
+            {
+                "value": "Move"
+            },
+            {
+                "value": "Open"
+            },
+            {
+                "value": "TakeItem"
+            },
+            {
+                "value": "Use"
+            }
+        ],
+        "doc": "User-defined entity",
+        "builtin": false
+    }
+}

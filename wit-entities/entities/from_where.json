@@ -1,0 +1,46 @@
+{
+                                                                                                                        "data" : {
+                                                                                                                          "lookups" : [
+                                                                                                                            "free-text",
+                                                                                                                            "keywords"
+                                                                                                                          ],
+                                                                                                                          "name" : "from_where",
+                                                                                                                          "lang" : "tr",
+                                                                                                                          "exotic" : false,
+                                                                                                                          "id" : "from_where",
+                                                                                                                          "values" : [
+                                                                                                                            {
+                                                                                                                              "value" : "masa",
+                                                                                                                              "expressions" : [
+                                                                                                                                "masa"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "masanın üzerindeki",
+                                                                                                                              "expressions" : [
+                                                                                                                                "masanın üzerindeki"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "raftan",
+                                                                                                                              "expressions" : [
+                                                                                                                                "raftan"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "yerden",
+                                                                                                                              "expressions" : [
+                                                                                                                                "yerden"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "yere",
+                                                                                                                              "expressions" : [
+                                                                                                                                "yere"
+                                                                                                                              ]
+                                                                                                                            }
+                                                                                                                          ],
+                                                                                                                          "doc" : "User-defined entity",
+                                                                                                                          "builtin" : false
+                                                                                                                        }
+                                                                                                                      }

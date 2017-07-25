@@ -1,0 +1,9 @@
+{
+                                                                                                                        "version" : 20160513,
+                                                                                                                        "zip-command" : "zip adventure-actions.zip adventure-actions/app.json adventure-actions/entities/*.json adventure-actions/actions.json adventure-actions/stories.json adventure-actions/expressions.json",
+                                                                                                                        "data" : {
+                                                                                                                          "name" : "adventure-actions",
+                                                                                                                          "description" : "",
+                                                                                                                          "lang" : "tr"
+                                                                                                                        }
+                                                                                                                      }

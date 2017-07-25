@@ -1,0 +1,22 @@
+{
+                                                                                                                        "data" : {
+                                                                                                                          "lookups" : [
+                                                                                                                            "free-text",
+                                                                                                                            "keywords"
+                                                                                                                          ],
+                                                                                                                          "name" : "what_to_open",
+                                                                                                                          "lang" : "tr",
+                                                                                                                          "exotic" : false,
+                                                                                                                          "id" : "what_to_open",
+                                                                                                                          "values" : [
+                                                                                                                            {
+                                                                                                                              "value" : "Dolabın kapağı",
+                                                                                                                              "expressions" : [
+                                                                                                                                "Dolabın kapağı"
+                                                                                                                              ]
+                                                                                                                            }
+                                                                                                                          ],
+                                                                                                                          "doc" : "User-defined entity",
+                                                                                                                          "builtin" : false
+                                                                                                                        }
+                                                                                                                      }

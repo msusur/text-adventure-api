@@ -1,0 +1,76 @@
+{
+                                                                                                                        "data" : {
+                                                                                                                          "lookups" : [
+                                                                                                                            "free-text",
+                                                                                                                            "keywords"
+                                                                                                                          ],
+                                                                                                                          "name" : "item",
+                                                                                                                          "lang" : "tr",
+                                                                                                                          "exotic" : false,
+                                                                                                                          "id" : "item",
+                                                                                                                          "values" : [
+                                                                                                                            {
+                                                                                                                              "value" : "Kalem",
+                                                                                                                              "expressions" : [
+                                                                                                                                "Kalem"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "kapı",
+                                                                                                                              "expressions" : [
+                                                                                                                                "kapı"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "kapıyı",
+                                                                                                                              "expressions" : [
+                                                                                                                                "kapıyı"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "masa",
+                                                                                                                              "expressions" : [
+                                                                                                                                "masa"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "mum",
+                                                                                                                              "expressions" : [
+                                                                                                                                "mum"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "pencere",
+                                                                                                                              "expressions" : [
+                                                                                                                                "pencere"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "pencereyi",
+                                                                                                                              "expressions" : [
+                                                                                                                                "pencereyi"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "tabela",
+                                                                                                                              "expressions" : [
+                                                                                                                                "tabela"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "ışık",
+                                                                                                                              "expressions" : [
+                                                                                                                                "ışık"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "şapka",
+                                                                                                                              "expressions" : [
+                                                                                                                                "şapka"
+                                                                                                                              ]
+                                                                                                                            }
+                                                                                                                          ],
+                                                                                                                          "doc" : "User-defined entity",
+                                                                                                                          "builtin" : false
+                                                                                                                        }
+                                                                                                                      }

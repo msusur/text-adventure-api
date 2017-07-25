@@ -1,0 +1,305 @@
+{
+                                                                                                                        "data" : {
+                                                                                                                          "lookups" : [
+                                                                                                                            "free-text",
+                                                                                                                            "keywords"
+                                                                                                                          ],
+                                                                                                                          "name" : "direction",
+                                                                                                                          "lang" : "tr",
+                                                                                                                          "exotic" : false,
+                                                                                                                          "id" : "direction",
+                                                                                                                          "values" : [
+                                                                                                                            {
+                                                                                                                              "value" : "Kapıya",
+                                                                                                                              "expressions" : [
+                                                                                                                                "Kapıya"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "Yatağı",
+                                                                                                                              "expressions" : [
+                                                                                                                                "Yatağı"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "anahtara",
+                                                                                                                              "expressions" : [
+                                                                                                                                "anahtara"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "anahtarı",
+                                                                                                                              "expressions" : [
+                                                                                                                                "anahtarı"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "atomu",
+                                                                                                                              "expressions" : [
+                                                                                                                                "atomu"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "aşağı",
+                                                                                                                              "expressions" : [
+                                                                                                                                "aşağı"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "bilgisayarı",
+                                                                                                                              "expressions" : [
+                                                                                                                                "bilgisayar",
+                                                                                                                                "bilgisayarı"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "caddeye",
+                                                                                                                              "expressions" : [
+                                                                                                                                "caddeye"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "cuma",
+                                                                                                                              "expressions" : [
+                                                                                                                                "cuma"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "dişarıya",
+                                                                                                                              "expressions" : [
+                                                                                                                                "dişarıya"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "duvar",
+                                                                                                                              "expressions" : [
+                                                                                                                                "duvar"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "dünyanın merkezi",
+                                                                                                                              "expressions" : [
+                                                                                                                                "dünyanın merkezi"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "düz",
+                                                                                                                              "expressions" : [
+                                                                                                                                "düz"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "dışarı",
+                                                                                                                              "expressions" : [
+                                                                                                                                "dışarı"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "elbiseyi",
+                                                                                                                              "expressions" : [
+                                                                                                                                "elbiseyi"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "etraf",
+                                                                                                                              "expressions" : [
+                                                                                                                                "etraf"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "etrafima",
+                                                                                                                              "expressions" : [
+                                                                                                                                "etrafima"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "geri",
+                                                                                                                              "expressions" : [
+                                                                                                                                "geri"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "güneşe",
+                                                                                                                              "expressions" : [
+                                                                                                                                "güneşe"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "iler",
+                                                                                                                              "expressions" : [
+                                                                                                                                "iler"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "ileri",
+                                                                                                                              "expressions" : [
+                                                                                                                                "ileri"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "ileriye",
+                                                                                                                              "expressions" : [
+                                                                                                                                "ileriye"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "içeri",
+                                                                                                                              "expressions" : [
+                                                                                                                                "içeri"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "kapiya",
+                                                                                                                              "expressions" : [
+                                                                                                                                "kapiya"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "kapiyi",
+                                                                                                                              "expressions" : [
+                                                                                                                                "kapiyi"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "kod",
+                                                                                                                              "expressions" : [
+                                                                                                                                "kod"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "koltuğa",
+                                                                                                                              "expressions" : [
+                                                                                                                                "koltuğa"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "kuzeye",
+                                                                                                                              "expressions" : [
+                                                                                                                                "kuzeye"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "lambayı",
+                                                                                                                              "expressions" : [
+                                                                                                                                "lambayı"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "masa",
+                                                                                                                              "expressions" : [
+                                                                                                                                "masa"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "masadaki",
+                                                                                                                              "expressions" : [
+                                                                                                                                "masadaki"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "masadan",
+                                                                                                                              "expressions" : [
+                                                                                                                                "masadan"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "masama",
+                                                                                                                              "expressions" : [
+                                                                                                                                "masama"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "masaya",
+                                                                                                                              "expressions" : [
+                                                                                                                                "masaya"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "masaya doğru",
+                                                                                                                              "expressions" : [
+                                                                                                                                "masaya doğru"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "masayı",
+                                                                                                                              "expressions" : [
+                                                                                                                                "masayı"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "saga",
+                                                                                                                              "expressions" : [
+                                                                                                                                "saga"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "sağa",
+                                                                                                                              "expressions" : [
+                                                                                                                                "sağa"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "sonraki sokaktan sağa",
+                                                                                                                              "expressions" : [
+                                                                                                                                "sonraki sokaktan sağa"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "süt",
+                                                                                                                              "expressions" : [
+                                                                                                                                "süt"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "tabelaya",
+                                                                                                                              "expressions" : [
+                                                                                                                                "tabelaya"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "tavana",
+                                                                                                                              "expressions" : [
+                                                                                                                                "tavana"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "yataktan",
+                                                                                                                              "expressions" : [
+                                                                                                                                "yataktan"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "yatağa",
+                                                                                                                              "expressions" : [
+                                                                                                                                "yatağa"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "yemek",
+                                                                                                                              "expressions" : [
+                                                                                                                                "yemek"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "yukarı",
+                                                                                                                              "expressions" : [
+                                                                                                                                "yukarı"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "yukarıya",
+                                                                                                                              "expressions" : [
+                                                                                                                                "yukarıya"
+                                                                                                                              ]
+                                                                                                                            },
+                                                                                                                            {
+                                                                                                                              "value" : "şehir merkezi",
+                                                                                                                              "expressions" : [
+                                                                                                                                "şehir merkezi"
+                                                                                                                              ]
+                                                                                                                            }
+                                                                                                                          ],
+                                                                                                                          "doc" : "User-defined entity",
+                                                                                                                          "builtin" : false
+                                                                                                                        }
+                                                                                                                      }
