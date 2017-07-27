@@ -84,7 +84,7 @@ const helpers = require('./helper.js'); // Helper functions.
 Commands are defined in the [wit.ai/adventure-actions](https://wit.ai/msusur/adventure-actions) and exported to `./wit-entities` folder as json files. Application is trained to understand Turkish but it can easily be trained using other languages as long as the same entities and intents are used. 
 
 ### Intents
-Intents analysed by wit.ai are converted into game commands. You can see the list of the defined commands in the [./src/commands.js](./src/commands.js) file. However some of them aren't implemented yet.
+Intents analysed by wit.ai are converted into game commands. You can see the list of the defined commands in the [./src/commands.js](./src/engine/commands.js) file. However some of them aren't implemented yet.
 
 1. Greeting
 2. DropItem
